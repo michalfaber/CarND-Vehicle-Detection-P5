@@ -201,7 +201,7 @@ def draw_boxes(img, bboxes, color=(0, 0, 255), thick=6):
         # Draw a rectangle given bbox coordinates
         cv2.rectangle(img, bbox[0], bbox[1], color, thick)
 
-    if debug_show_paths or debug_show_paths:
+    if debug_show_paths or debug_show_windows:
         for sta, sto in zip(x_start_stop, y_start_stop):
             cv2.line(img, (sta[0], sto[0]), (sta[1], sto[1]), (255, 0, 0), 6)
 
