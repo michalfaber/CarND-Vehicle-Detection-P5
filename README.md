@@ -105,3 +105,16 @@ Here's an example result showing the heatmap from a series of frames of video, t
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
 ![alt text][image7]
 
+---
+
+###Discussion
+
+####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+
+I decided to use only HOG. Spatial binary features and color histograms resulted in poor performance. 
+Moreover, I used smaller number of windows. Windows are generated based on list of trajectories. Bigger windows closer to the camera
+and smaller windows closer to the horizon. This optimization significantly helped to improve performance.
+For this project I used only simple lines as trajectories but in more advanced approach those trajectories
+may correspond to detected lanes lines and may be in the form of a second order polynomial curve.
+The solution may fail when the cars move too fast - they may be thresholded, when cars are partially occluded, 
+during worse environmental conditions - common problems with all vision techniques.
